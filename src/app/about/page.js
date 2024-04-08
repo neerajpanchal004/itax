@@ -1,5 +1,7 @@
+
 import React from 'react'
 import AppLayout from '../components/AppLayout'
+
 
 
 const Page = () => {
@@ -219,6 +221,7 @@ const Page = () => {
                 </div>
                 {/* our vision */}
 
+            
 
 
                 {/* footer */}

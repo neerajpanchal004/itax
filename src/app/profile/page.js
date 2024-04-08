@@ -13,18 +13,15 @@ const ProfilePage = () => {
     const userInfo = useSelector((state) => state.user)
     const { firstname, lastname, email,pan, aadhar, phone , address,gender,pincode} = userInfo;
     const [toggle, setToggle] = useState(false)
-    const [formData,setFormData]= useState({
-        
-    })
 
-    var obj = {
+    const obj = {
         firstname: "", 
-        lastName:"",  
+        lastname: "",  
         email:"" ,
         pan:"",
         aadhaar:"",
         phone:"",
-        pinCode:"",
+        pincode:"",
         gender:"",
         address:""
     }
@@ -33,7 +30,6 @@ const ProfilePage = () => {
     
     dispatch(add(obj))
     alert("updated")
-    console.log(obj[firstname])
  }
   
     return (
@@ -93,34 +89,34 @@ const ProfilePage = () => {
                             {/* PAN */}
                             <div className='flex-col'>
                                 <p>PAN</p>
-                                <input type="text" placeholder="Enter your pan number" className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
+                                <input type="text" placeholder="Enter your pan number" onChange={(e)=>obj.pan = e.target.value } className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
                             </div>
 
                             {/* AADHAR */}
 
                             <div className='flex-col'>
                                 <p>AADHAR</p>
-                                <input type="text" placeholder="Enter your aadhar number" className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto ' />
+                                <input type="text" placeholder="Enter your aadhar number" onChange={(e)=>obj.aadhar = e.target.value } className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto ' />
                             </div>
 
                             {/* FIRST NAME */}
 
                             <div className='flex-col'>
                                 <p>FIRST NAME</p>
-                                <input type="text" placeholder="Enter your first name" onChange={(e)=>{return obj[firstname] = e.target.value }} className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
+                                <input type="text" placeholder="Enter your first name" onChange={(e)=>obj.firstname = e.target.value } className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
                             </div>
                             {/* LAST NAME */}
 
                             <div className='flex-col'>
                                 <p>LAST NAME</p>
-                                <input type="text" placeholder="Enter your last name" className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
+                                <input type="text" placeholder="Enter your last name" onChange={(e)=>obj.lastname = e.target.value } className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
                             </div>
 
                             {/* EMAIL */}
 
                             <div className='flex-col'>
                                 <p>EMAIL</p>
-                                <input type="email" placeholder="Enter your email" className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
+                                <input type="email" placeholder="Enter your email" onChange={(e)=>obj.email = e.target.value } className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
                             </div>
 
                             {/* PHONE NUMBER */}
@@ -128,27 +124,27 @@ const ProfilePage = () => {
 
                             <div className='flex-col'>
                                 <p>PHONE NUMBER</p>
-                                <input type="text" placeholder="Enter your phone number" className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
+                                <input type="number" placeholder="Enter your phone number" onChange={(e)=>obj.phone = e.target.value } className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
                             </div>
 
                             {/* ADDRESS */}
 
                             <div className='flex-col'>
                                 <p>ADDRESS</p>
-                                <input type="text" placeholder="Enter your address" className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
+                                <input type="text" placeholder="Enter your address" onChange={(e)=>obj.address = e.target.value } className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
                             </div>
                             {/* GENDER */}
 
                             <div className='flex-col'>
                                 <p>GENDER</p>
-                                <input type="text" placeholder="Enter your gender" className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
+                                <input type="text" placeholder="Enter your gender" onChange={(e)=>obj.gender = e.target.value } className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
                             </div>
 
                             {/* PIN CODE */}
 
                             <div className='flex-col'>
                                 <p>PIN CODE</p>
-                                <input type="text" placeholder="Enter your pin code" className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
+                                <input type="number" placeholder="Enter your pin code" onChange={(e)=>obj.pincode = e.target.value } className='p-3 rounded-lg bg-slate-200 mt-1 w-80  lg:w-auto' />
                             </div>
 
                             
@@ -158,7 +154,7 @@ const ProfilePage = () => {
                                 {toggle && (
                                     <>
                                         <button className='p-2 rounded-xl text-white bg-blue-700' onClick={()=>handleChange(obj)}>Save</button>
-                                        <button className='p-2 rounded-xl text-white bg-blue-700 ml-10 lg:ml-20'>Cancel</button>
+                                        <button className='p-2 rounded-xl text-white bg-blue-700 ml-10 lg:ml-20' onClick={()=>setToggle(false)}>Cancel</button>
                                     </>
                                 )}
 

@@ -11,7 +11,7 @@ import { add } from '../store/slices/userSlice';
 const ProfilePage = () => {
     const dispatch = useDispatch()
     const userInfo = useSelector((state) => state.user)
-    const { firstname, lastname, email,pan, aadhar, phone , address,gender,pincode} = userInfo;
+    const { firstname, lastname, email} = userInfo;
     const [toggle, setToggle] = useState(false)
 
     const obj = {
